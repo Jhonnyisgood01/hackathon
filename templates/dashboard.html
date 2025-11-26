@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mibanco Core - Dashboard</title>
+    <!-- Bootstrap para diseño rápido -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .card-kpi { border-left: 5px solid #0056b3; transition: transform 0.2s; }
+        .card-kpi:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-light">
+    
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-primary shadow">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1"><i class="fas fa-university me-2"></i>Mibanco Core System</span>
+            <a href="/admin" class="btn btn-outline-light btn-sm">Ir al Admin</a>
+        </div>
+    </nav>
+
+    <div class="container py-4">
+        <!-- Título -->
+        <div class="row mb-4">
+            <div class="col-md-8">
+                <h2>📊 Tablero de Control Huánuco</h2>
+                <p class="text-muted">Monitoreo de riesgo y colocación en tiempo real.</p>
+            </div>
+            <div class="col-md-4 text-end">
+                <button class="btn btn-success" onclick="consultarIA()"><i class="fas fa-robot me-2"></i>Consultar Asesor IA</button>
+            </div>
+        </div>
+
+        <!-- Tarjetas KPIs -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card shadow-sm card-kpi">
+                    <div class="card-body">
+                        <h6 class="text-muted">Total Clientes</h6>
+                        <h3>{{ total_clients }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card shadow-sm card-kpi" style="border-left-color: #28a745;">
+                    <div class="card-body">
+                        <h6 class="text-muted">Colocación Potencial</h6>
+                        <h3>S/ {{ potential_placement }}</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <!-- Espacio para la respuesta de la IA -->
+                <div id="ia-box" class="alert alert-info d-none">
+                    <strong>🤖 Mibanco Bot dice:</strong>
+                    <p id="ia-text" class="mb-0 small">Analizando cartera...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mapa -->
+        <div class="card shadow">
+            <div class="card-header bg-white">
+                <h5 class="mb-0"><i class="fas fa-map-marked-alt me-2"></i>Geolocalización de Riesgo</h5>
+            </div>
+            <div class="card-body p-0">
+                <!-- Aquí se inyecta el mapa de Python -->
+                {{ map_html|safe }}
+            </div>
+        </div>
+    </div>
+
+    <!-- Script IA Falso (Simulación para demo rápida, o conéctalo a tu API real) -->
+    <script>
+        async function consultarIA() {
+            const box = document.getElementById('ia-box');
+            const txt = document.getElementById('ia-text');
+            
+            box.classList.remove('d-none');
+            box.className = 'alert alert-warning';
+            txt.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Consultando a Gemini AI...';
+
+            // Simulación de delay (o aquí haz el fetch a /api/risk/opinion)
+            setTimeout(() => {
+                box.className = 'alert alert-success';
+                txt.innerText = "Recomendación Estratégica: La zona norte de Huánuco muestra alta capacidad de pago. Se sugiere campaña de Crédito Agrícola enfocada en papa amarilla. Riesgo actual: BAJO.";
+            }, 2500);
+        }
+    </script>
+</body>
+</html>

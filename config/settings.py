@@ -30,6 +30,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,8 +44,10 @@ INSTALLED_APPS = [
 
     # --- MIS APPS (MÓDULOS) ---
     'core',    # Núcleo / Utilidades
-    'users',   # Usuarios / Seguridad
-    # 'clients', # Gestión de Clientes (Recién creado)
+    'users',
+    'clients',# Usuarios / Seguridad
+    'credit_risk',
+    'operations',# 'clients', # Gestión de Clientes (Recién creado)
 ]
 
 MIDDLEWARE = [
@@ -63,7 +66,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -138,3 +141,20 @@ REST_FRAMEWORK = {
 
 # --- USUARIO PERSONALIZADO ---
 AUTH_USER_MODEL = 'users.User'
+
+JAZZMIN_SETTINGS = {
+    "site_title": "MiBanco Admin",
+    "site_header": "Sistema Core Bancario",
+    "welcome_sign": "Bienvenido al Panel de Control - Hackaton 2024",
+    "copyright": "Mibanco Team",
+    "search_model": ["clients.Client", "users.User"],
+    "topmenu_links": [
+        {"name": "Dashboard Ejecutivo", "url": "dashboard", "permissions": ["auth.view_user"]},
+    ],
+    "icons": {
+        "users.User": "fas fa-user-shield",
+        "clients.Client": "fas fa-users",
+        "credit_risk.CreditEvaluation": "fas fa-chart-line",
+        "operations.Loan": "fas fa-money-bill-wave",
+    },
+}
