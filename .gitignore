@@ -1,0 +1,29 @@
+ # --- Python & Django ---
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+db.sqlite3
+local_settings.py
+.env
+/venv
+/env
+
+# --- VS Code & IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Archivos de Medios (No se suben imagenes de prueba) ---
+/media/
+/static/
+
+# --- Sistemas Operativos ---
+.DS_Store
+Thumbs.db
+
+# --- Logs y Reportes ---
+*.log
+/logs
+celerybeat-schedule
