@@ -10,5 +10,9 @@ urlpatterns = [
     path('dashboard/', dashboard_view, name='dashboard'),
 
     # 3. Las APIs (Lógica Backend)
-    path('api/risk/', include('credit_risk.urls')), 
+    path('api/risk/', include('credit_risk.urls')),
+    
+    path('api/integrations/', include('integrations.urls')),
+    
+    path('api/analytics/', include('analytics.urls')),
 ]

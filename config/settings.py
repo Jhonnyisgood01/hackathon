@@ -47,7 +47,10 @@ INSTALLED_APPS = [
     'users',
     'clients',# Usuarios / Seguridad
     'credit_risk',
-    'operations',# 'clients', # Gestión de Clientes (Recién creado)
+    'operations',
+    'notifications',
+    'integrations',
+    'analytics',# 'clients', # Gestión de Clientes (Recién creado)
 ]
 
 MIDDLEWARE = [
