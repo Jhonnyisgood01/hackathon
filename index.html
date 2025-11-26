@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard Mibanco - Sistema de Mejora Organizacional</title>
+    <!-- Enlazar el CSS externo -->
+    <link rel="stylesheet" href="css/index.css" href="js/app.js">
+</head>
+<body>
+<div class="layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+            <div class="sidebar-logo-circle"></div>
+            <div>
+                <h1>Mibanco</h1>
+                <span>Sistema de Mejora Organizacional</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <div>
+                <div class="sidebar-nav-section-title">Navegación</div>
+                <a href="#inicio-dashboard" class="sidebar-link active">Inicio / Dashboard</a>
+                <a href="#mod-usuarios" class="sidebar-link">Gestión de usuarios</a>
+                <a href="#mod-clientes" class="sidebar-link">Gestión de clientes</a>
+                <a href="#mod-riesgo" class="sidebar-link">Riesgo crediticio</a>
+                <a href="#mod-operaciones" class="sidebar-link">Operaciones</a>
+                <a href="#mod-analytics" class="sidebar-link">Analítica</a>
+                <a href="#mod-notificaciones" class="sidebar-link">Notificaciones</a>
+                <a href="#mod-integraciones" class="sidebar-link">Integraciones</a>
+
+                <div class="sidebar-nav-section-title">Tecnología</div>
+                <a href="#mod-java" class="sidebar-link">Servicios backend en Java</a>
+            </div>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div>Versión 1.0 · Prototipo</div>
+            <div>Proyecto: Mejora Organizacional<br>Mibanco</div>
+        </div>
+    </aside>
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <div class="main">
+        <header class="main-header" id="inicio-dashboard">
+            <div class="main-header-left">
+                <h2>Dashboard general Mibanco</h2>
+                <p>Visión global del sistema: usuarios, clientes, riesgo, operaciones, analítica y notificaciones.</p>
+                <span class="tag-stack">
+                    Stack: Python / Django · Java (microservicios) · PostgreSQL
+                </span>
+            </div>
+            <div class="main-header-right">
+                Usuario conectado: <strong>admin@mibanco.pe</strong>
+                <span class="tag-role">Rol Admin</span>
+            </div>
+        </header>
+
+        <main class="content">
+            <!-- KPIs -->
+            <section class="kpi-row">
+                <div class="kpi-card">
+                    <span class="label">Créditos activos</span>
+                    <strong class="valor">1,245</strong>
+                    <small>Total gestionado en la plataforma</small>
+                </div>
+                <div class="kpi-card">
+                    <span class="label">Morosidad global</span>
+                    <strong class="valor">4.3%</strong>
+                    <small>Dato clave para analistas de riesgo</small>
+                </div>
+                <div class="kpi-card">
+                    <span class="label">Operaciones del día</span>
+                    <strong class="valor">384</strong>
+                    <small>Depósitos, retiros y pagos registrados por cajeros</small>
+                </div>
+                <div class="kpi-card">
+                    <span class="label">Alertas pendientes</span>
+                    <strong class="valor">19</strong>
+                    <small>Notificaciones críticas generadas por el sistema</small>
+                </div>
+            </section>
+
+            <!-- ROLES -->
+            <section class="roles-section">
+                <div class="roles-title-row">
+                    <h3>Roles del sistema</h3>
+                    <small>Accesos rápidos a las interfaces específicas de cada usuario interno.</small>
+                </div>
+                <div class="roles-grid">
+                    <div class="role-card">
+                        <span class="role-badge analista">Analista de riesgo</span>
+                        <h4>Panel del Analista</h4>
+                        <p>Monitorea morosidad, score de riesgo y cartera en observación.</p>
+                        <a href="/analista/" class="role-btn">Entrar como Analista</a>
+                    </div>
+                    <div class="role-card">
+                        <span class="role-badge cajero">Cajero</span>
+                        <h4>Panel de Cajero</h4>
+                        <p>Registra depósitos, retiros y pagos de créditos en ventanilla.</p>
+                        <a href="/cajero/" class="role-btn">Entrar como Cajero</a>
+                    </div>
+                    <div class="role-card">
+                        <span class="role-badge ejecutivo">Ejecutivo</span>
+                        <h4>Panel de Ejecutivo</h4>
+                        <p>Gestiona la cartera de clientes, oportunidades y renovaciones de crédito.</p>
+                        <a href="/ejecutivo/" class="role-btn">Entrar como Ejecutivo</a>
+                    </div>
+                    <div class="role-card">
+                        <span class="role-badge admin">Administrador</span>
+                        <h4>Panel de Admin</h4>
+                        <p>Administra usuarios, roles, seguridad y el estado general de la plataforma.</p>
+                        <a href="/admin-panel/" class="role-btn">Entrar como Admin</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- MÓDULOS -->
+            <section class="modules-grid">
+                <!-- Módulos funcionales -->
+                <div class="card">
+                    <h3>Módulos funcionales del sistema</h3>
+                    <div class="modules-list">
+                        <div class="module-item" id="mod-usuarios">
+                            <div class="module-item-title">Gestión de usuarios</div>
+                            <div class="module-item-desc">
+                                Control de cuentas internas, roles (analista, cajero, ejecutivo, admin) y permisos.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo users</span>
+                                <a href="/usuarios/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-clientes">
+                            <div class="module-item-title">Gestión de clientes</div>
+                            <div class="module-item-desc">
+                                Registro y actualización de clientes Mibanco, historial y segmentación.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo clients</span>
+                                <a href="/clientes/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-riesgo">
+                            <div class="module-item-title">Riesgo crediticio</div>
+                            <div class="module-item-desc">
+                                Motor de reglas, scoring y seguimiento de evaluaciones de riesgo.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo credit_risk</span>
+                                <a href="/riesgo/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-operaciones">
+                            <div class="module-item-title">Operaciones internas</div>
+                            <div class="module-item-desc">
+                                Gestión de préstamos, pagos, tickets internos y flujo operativo.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo operations</span>
+                                <a href="/operaciones/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-analytics">
+                            <div class="module-item-title">Analítica y KPIs</div>
+                            <div class="module-item-desc">
+                                Reportes de cartera, morosidad y eficiencia para la mejora organizacional.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo analytics</span>
+                                <a href="/analytics/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-notificaciones">
+                            <div class="module-item-title">Notificaciones</div>
+                            <div class="module-item-desc">
+                                Envío y registro de correos, SMS y alertas automáticas del sistema.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo notifications</span>
+                                <a href="/notificaciones/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-integraciones">
+                            <div class="module-item-title">Integraciones externas</div>
+                            <div class="module-item-desc">
+                                Conexión con SUNAT, RENIEC y servicios externos de scoring.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Módulo integrations</span>
+                                <a href="/integraciones/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+
+                        <div class="module-item" id="mod-java">
+                            <div class="module-item-title">Servicios backend en Java</div>
+                            <div class="module-item-desc">
+                                Microservicios Java para procesamiento intensivo, integraciones externas
+                                y lógica de negocio crítica que se comunica con el core en Django.
+                            </div>
+                            <div class="module-item-footer">
+                                <span class="module-tag">Java · Spring / APIs</span>
+                                <a href="/java-servicios/" class="module-link">Ir al módulo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Actividad reciente -->
+                <div class="card">
+                    <h3>Actividad reciente del sistema</h3>
+                    <ul class="timeline">
+                        <li>
+                            <strong>Nuevo usuario creado:</strong> ejecutivo02  
+                            <small>Hace 5 min · Panel Admin</small>
+                        </li>
+                        <li>
+                            <strong>Evaluación de riesgo completada:</strong> CR-2025-00123  
+                            <small>Hace 18 min · Motor de riesgo</small>
+                        </li>
+                        <li>
+                            <strong>Pago de crédito registrado:</strong> S/. 320.00  
+                            <small>Hace 25 min · Cajero01</small>
+                        </li>
+                        <li>
+                            <strong>Reporte de morosidad generado:</strong> Nivel regional  
+                            <small>Hace 1 h · Módulo analytics</small>
+                        </li>
+                        <li>
+                            <strong>Servicio Java sincronizado:</strong> Actualización de scoring externo  
+                            <small>Hace 1 h 30 min · Módulo Java</small>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Estado plataforma -->
+                <div class="card">
+                    <h3>Estado de la plataforma</h3>
+                    <p class="label-ok">● API principal (Django): Online</p>
+                    <p class="label-ok">● Servicios Java (microservicios): Online</p>
+                    <p class="label-ok">● Base de datos PostgreSQL: Online</p>
+                    <p class="label-warn">● Integración SUNAT: Respuesta lenta</p>
+                    <p class="label-ok">● Servicio de notificaciones: Online</p>
+                    <hr>
+                    <small class="estado-texto">
+                        Este panel resume el estado general del sistema de mejora organizacional basado en soluciones tecnológicas
+                        para Mibanco con una arquitectura híbrida Python/Django + Java + PostgreSQL.
+                    </small>
+                </div>
+            </section>
+        </main>
+    </div>
+
+</div>
+
+<!-- Enlazar JavaScript (aquí es JavaScript, no Java de backend) -->
+<script src="js/app.js"></script>
+</body>
+</html>
